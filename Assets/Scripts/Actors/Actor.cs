@@ -8,16 +8,20 @@ using UnityEngine.Events;
 namespace Actors {
     public class Actor : MonoBehaviour { // todo: inherit
         [SerializeField] private Fighter[] fighters;
-        [SerializeField] private int _fightersCount;
+        
+        private int _fightersCount;
 
         private void Start() {
             Fighter.GotFighterDeath += OnFighterDeath;
+        }
+
+        private void Update() {
             _fightersCount = fighters.Length;
         }
 
         public static event UnityAction GotPlayerDeath;
 
-        public void OnFighterDeath(Fighter fighter) {
+        private void OnFighterDeath(Fighter fighter) {
             if (!fighters.Contains(fighter)) return;
             Debug.Log("Got Fighter Dead:" + fighter.fighterName);
             Destroy(fighter.GameObject()); // todo: delete
@@ -27,6 +31,10 @@ namespace Actors {
 
             if (_fightersCount <= 0) GotPlayerDeath?.Invoke();
             Debug.Log("Got Player Dead");
+        }
+
+        public Fighter[] GetFighters() {
+            return fighters;
         }
     }
 }

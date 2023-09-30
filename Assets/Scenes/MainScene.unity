@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Skill 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
-  damagePower: 26
+  autoDamagePower: 0
   healPower: 0
 --- !u!114 &336242977
 MonoBehaviour:
@@ -342,7 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb40424fa9a3e34f871f8037a0453ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
 --- !u!212 &336242978
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -408,7 +407,7 @@ GameObject:
   - component: {fileID: 424397527}
   - component: {fileID: 424397526}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Skill 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,13 +420,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424397524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5536883, y: 7.9882298, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2080591571}
-  m_Father: {fileID: 538490548}
+  m_Father: {fileID: 888621045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -477,7 +476,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 424397527}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 748411854}
+        m_TargetAssemblyTypeName: Fighters.Skill, Assembly-CSharp
+        m_MethodName: InvokeSkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &424397527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,10 +759,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1732721376}
-  - {fileID: 1764956825}
-  - {fileID: 1224399609}
-  - {fileID: 424397525}
-  - {fileID: 903714746}
+  - {fileID: 888621045}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -830,7 +838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
-  damagePower: 26
+  autoDamagePower: 0
   healPower: 0
 --- !u!114 &602474618
 MonoBehaviour:
@@ -844,7 +852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb40424fa9a3e34f871f8037a0453ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
 --- !u!212 &602474619
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -992,6 +999,7 @@ GameObject:
   - component: {fileID: 748411852}
   - component: {fileID: 748411851}
   - component: {fileID: 748411850}
+  - component: {fileID: 748411854}
   m_Layer: 0
   m_Name: Test Fighter 3
   m_TagString: Untagged
@@ -1050,7 +1058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
-  damagePower: 26
+  autoDamagePower: 0
   healPower: 0
 --- !u!114 &748411852
 MonoBehaviour:
@@ -1064,7 +1072,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb40424fa9a3e34f871f8037a0453ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
 --- !u!212 &748411853
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1117,6 +1124,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &748411854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748411848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillPower: 30
+  aoe: 0
+  cooldown: 0
+  button: {fileID: 424397526}
 --- !u!1 &778660075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,7 +1197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Skill 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1308,7 +1331,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Skill 4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1456,7 +1479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
-  damagePower: 26
+  autoDamagePower: 0
   healPower: 0
 --- !u!114 &837250025
 MonoBehaviour:
@@ -1470,7 +1493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb40424fa9a3e34f871f8037a0453ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
 --- !u!212 &837250026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1523,6 +1545,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &888621044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 888621045}
+  m_Layer: 5
+  m_Name: Skills
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &888621045
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888621044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1764956825}
+  - {fileID: 1224399609}
+  - {fileID: 424397525}
+  - {fileID: 903714746}
+  m_Father: {fileID: 538490548}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &903714745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,7 +1597,7 @@ GameObject:
   - component: {fileID: 903714748}
   - component: {fileID: 903714747}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Skill 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1549,13 +1610,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903714745}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5536883, y: 7.9882298, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 808912614}
-  m_Father: {fileID: 538490548}
+  m_Father: {fileID: 888621045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1605,7 +1666,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 903714748}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1894022795}
+        m_TargetAssemblyTypeName: Fighters.Skill, Assembly-CSharp
+        m_MethodName: InvokeSkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &903714748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1656,7 +1729,7 @@ GameObject:
   - component: {fileID: 935667852}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1693,7 +1766,6 @@ MonoBehaviour:
   - {fileID: 1197132952}
   - {fileID: 748411851}
   - {fileID: 1894022792}
-  _fightersCount: 0
 --- !u!1 &1140965810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,7 +1779,7 @@ GameObject:
   - component: {fileID: 1140965811}
   m_Layer: 0
   m_Name: Meta
-  m_TagString: Untagged
+  m_TagString: Meta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1764,6 +1836,7 @@ GameObject:
   - component: {fileID: 1197132953}
   - component: {fileID: 1197132952}
   - component: {fileID: 1197132951}
+  - component: {fileID: 1197132955}
   m_Layer: 0
   m_Name: Test Fighter 2
   m_TagString: Untagged
@@ -1822,7 +1895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
-  damagePower: 26
+  autoDamagePower: 0
   healPower: 0
 --- !u!114 &1197132953
 MonoBehaviour:
@@ -1836,7 +1909,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb40424fa9a3e34f871f8037a0453ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
 --- !u!212 &1197132954
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1889,6 +1961,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1197132955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197132949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillPower: 23
+  aoe: 1
+  cooldown: 0
+  button: {fileID: 1224399610}
 --- !u!1 &1224399608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,7 +1990,7 @@ GameObject:
   - component: {fileID: 1224399611}
   - component: {fileID: 1224399610}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Skill 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1915,13 +2003,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224399608}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5536883, y: 7.9882298, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 289662775}
-  m_Father: {fileID: 538490548}
+  m_Father: {fileID: 888621045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1971,7 +2059,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1224399611}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1197132955}
+        m_TargetAssemblyTypeName: Fighters.Skill, Assembly-CSharp
+        m_MethodName: InvokeSkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1224399611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2022,7 +2122,7 @@ GameObject:
   - component: {fileID: 1413448032}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2044,7 +2144,6 @@ MonoBehaviour:
   - {fileID: 602474617}
   - {fileID: 1445023820}
   - {fileID: 336242976}
-  _fightersCount: 0
 --- !u!4 &1413448033
 Transform:
   m_ObjectHideFlags: 0
@@ -2172,7 +2271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
-  damagePower: 26
+  autoDamagePower: 0
   healPower: 0
 --- !u!114 &1445023821
 MonoBehaviour:
@@ -2186,7 +2285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb40424fa9a3e34f871f8037a0453ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
 --- !u!212 &1445023822
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2327,7 +2425,7 @@ GameObject:
   - component: {fileID: 1764956827}
   - component: {fileID: 1764956826}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Skill 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2340,13 +2438,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764956824}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5536883, y: 7.9882298, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 778660076}
-  m_Father: {fileID: 538490548}
+  m_Father: {fileID: 888621045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2396,7 +2494,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1764956827}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2113230785}
+        m_TargetAssemblyTypeName: Fighters.Skill, Assembly-CSharp
+        m_MethodName: InvokeSkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1764956827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2448,6 +2558,7 @@ GameObject:
   - component: {fileID: 1894022793}
   - component: {fileID: 1894022792}
   - component: {fileID: 1894022791}
+  - component: {fileID: 1894022795}
   m_Layer: 0
   m_Name: Test Fighter 4
   m_TagString: Untagged
@@ -2506,7 +2617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
-  damagePower: 26
+  autoDamagePower: 0
   healPower: 0
 --- !u!114 &1894022793
 MonoBehaviour:
@@ -2520,7 +2631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb40424fa9a3e34f871f8037a0453ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
 --- !u!212 &1894022794
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2573,6 +2683,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1894022795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894022789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillPower: 50
+  aoe: 0
+  cooldown: 0
+  button: {fileID: 903714747}
 --- !u!1 &1901529112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2698,7 +2824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Skill 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2788,6 +2914,7 @@ GameObject:
   - component: {fileID: 2113230782}
   - component: {fileID: 2113230781}
   - component: {fileID: 2113230784}
+  - component: {fileID: 2113230785}
   m_Layer: 0
   m_Name: Test Fighter 1
   m_TagString: Untagged
@@ -2823,7 +2950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
-  damagePower: 26
+  autoDamagePower: 0
   healPower: 0
 --- !u!114 &2113230782
 MonoBehaviour:
@@ -2837,7 +2964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb40424fa9a3e34f871f8037a0453ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
 --- !u!212 &2113230783
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2913,6 +3039,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2113230785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113230779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillPower: 70
+  aoe: 0
+  cooldown: 3
+  button: {fileID: 1764956826}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

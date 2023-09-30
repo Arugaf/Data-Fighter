@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Fighters {
     [RequireComponent(typeof(Health))]
     public class Fighter : MonoBehaviour {
         public string fighterName;
 
-        [SerializeField] private int damagePower;
+        [SerializeField] private int autoDamagePower;
         [SerializeField] private int healPower;
 
         // private bool _allowedToHover = true;
@@ -37,7 +38,7 @@ namespace Fighters {
         public static event UnityAction<Fighter> GotFighterDeath;
 
         public void DoDamage(Fighter fighter) {
-            fighter.ApplyDamage(damagePower);
+            fighter.ApplyDamage(autoDamagePower);
         }
 
         public void DoHeal(Fighter fighter) {
@@ -46,6 +47,7 @@ namespace Fighters {
 
         public void ApplyDamage(int damage) {
             _hp.ApplyHpChange(damage);
+            Debug.Log("Fighter: " + fighterName + "has " + _hp.Hp + " left");
             if (_hp.Status == Status.Dead) GotFighterDeath?.Invoke(this);
         }
 

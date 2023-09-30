@@ -7,12 +7,12 @@ namespace Fighters {
     }
 
     public class Health : MonoBehaviour {
-        [SerializeField] private int hp = 100;
+        public int Hp { get; private set; }= 100;
         public Status Status { get; private set; } = Status.Alive;
         
         public void ApplyHpChange(int hpChange) {
-            hp -= hpChange;
-            Status = hp <= 0 ? Status.Dead : Status.Alive;
+            Hp -= hpChange;
+            Status = Hp <= 0 ? Status.Dead : Status.Alive;
         }
     }
 }
