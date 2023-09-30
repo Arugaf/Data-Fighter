@@ -5,13 +5,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Player {
-    public class Player : MonoBehaviour { // todo: inherit
+namespace Actors {
+    public class Actor : MonoBehaviour { // todo: inherit
         [SerializeField] private Fighter[] fighters;
-        private int _fightersCount;
+        [SerializeField] private int _fightersCount;
 
         private void Start() {
             Fighter.GotFighterDeath += OnFighterDeath;
+            _fightersCount = fighters.Length;
         }
 
         public static event UnityAction GotPlayerDeath;

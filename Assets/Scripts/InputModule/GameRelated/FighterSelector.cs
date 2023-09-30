@@ -45,8 +45,6 @@ namespace InputModule.GameRelated {
             var go = hit.transform.GameObject();
             _target = _fighters.Contains(go) ? go : null;
 
-            if (_target) Debug.Log(_target.name);
-
             if (!_target || _someFighterHovered) return;
 
             GotFighterHovered?.Invoke(_target);
@@ -54,7 +52,6 @@ namespace InputModule.GameRelated {
             _someFighterHovered = true;
 
             if (!_isLookingForTarget) return;
-            Debug.Log("banana");
             GotFighterSelected?.Invoke(_target);
         }
 
@@ -70,7 +67,6 @@ namespace InputModule.GameRelated {
 
         private void OnPrimaryMouseButtonUp() {
             if (_isLookingForTarget && _target) GotFighterClicked?.Invoke(_target);
-            Debug.Log("potato");
             _isLookingForTarget = false;
         }
     }
