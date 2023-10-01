@@ -20,7 +20,7 @@ namespace Actors {
             Fighter.GotFighterDeath += OnFighterDeath;
         }
 
-        public static event UnityAction GotPlayerDeath;
+        public static event UnityAction<Actor> GotActorDead;
 
         private void OnFighterDeath(Fighter fighter) {
             if (!fighters.Contains(fighter)) return;
@@ -32,7 +32,7 @@ namespace Actors {
 
             if (_fightersInternal.Count > 0) return;
 
-            GotPlayerDeath?.Invoke();
+            GotActorDead?.Invoke(this);
             Debug.Log("Got Actor " + name + " Dead");
         }
 
