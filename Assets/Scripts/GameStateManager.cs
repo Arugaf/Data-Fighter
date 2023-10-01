@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // todo 
-// heal
 // menu endgame
 // statistics
 // skill cancel
