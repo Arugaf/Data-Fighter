@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Fighters;
 using Unity.VisualScripting;
@@ -8,15 +9,13 @@ using UnityEngine.Events;
 namespace Actors {
     public class Actor : MonoBehaviour { // todo: inherit
         [SerializeField] private Fighter[] fighters;
+        private List<Fighter> _fightersInternal = new List<Fighter>();
         
-        private int _fightersCount;
-
         private void Start() {
             Fighter.GotFighterDeath += OnFighterDeath;
-        }
-
-        private void Update() {
-            _fightersCount = fighters.Length;
+            foreach (var f in fighters) {
+                _fightersInternal.Add(f);
+            }
         }
 
         public static event UnityAction GotPlayerDeath;
@@ -27,14 +26,20 @@ namespace Actors {
             Destroy(fighter.GameObject()); // todo: delete
 
             fighters[Array.IndexOf(fighters, fighter)] = null;
-            --_fightersCount;
+            _fightersInternal.Remove(fighter);
 
-            if (_fightersCount <= 0) GotPlayerDeath?.Invoke();
-            Debug.Log("Got Player Dead");
+            if (_fightersInternal.Count > 0) return;
+            
+            GotPlayerDeath?.Invoke();
+            Debug.Log("Got Actor " + name + " Dead");
         }
 
         public Fighter[] GetFighters() {
             return fighters;
+        }
+        
+        public List<Fighter> GetFighterList() {
+            return _fightersInternal;
         }
     }
 }
