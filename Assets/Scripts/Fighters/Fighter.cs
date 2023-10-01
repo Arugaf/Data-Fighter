@@ -6,6 +6,8 @@ using UnityEngine.Events;
 namespace Fighters {
     [RequireComponent(typeof(Health))]
     public class Fighter : MonoBehaviour {
+        private const float StartDelay = 0.5f;
+
         public string fighterName;
         [SerializeField] private bool isEnemyFighter;
 
@@ -109,6 +111,7 @@ namespace Fighters {
         }
 
         private IEnumerator AutoDamager() {
+            yield return new WaitForSeconds(StartDelay);
             while (true) {
                 DoDamage(_ai.GetTarget(isEnemyFighter));
                 yield return new WaitForSeconds(autoCooldown);
