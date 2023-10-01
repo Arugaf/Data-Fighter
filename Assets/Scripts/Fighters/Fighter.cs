@@ -8,13 +8,12 @@ namespace Fighters {
     public class Fighter : MonoBehaviour {
         private const float StartDelay = 0.5f;
 
-        public string fighterName;
         [SerializeField] private bool isEnemyFighter;
 
         [SerializeField] private float autoCooldown = 1.0f;
 
         [SerializeField] private int autoDamagePower;
-        [SerializeField] private int healPower;
+        // [SerializeField] private int healPower;
 
         private BattleMind _ai;
 
@@ -32,7 +31,7 @@ namespace Fighters {
             _renderer = GetComponent<SpriteRenderer>();
 
             IsAlive = _hp.Status == Status.Alive;
-            Hp = _hp.Hp;
+            Hp = _hp.GetCurrentHp();
 
             _ai = GameObject.FindGameObjectWithTag("Meta").GetComponent<BattleMind>();
         }
@@ -62,13 +61,13 @@ namespace Fighters {
             fighter.ApplyDamage(autoDamagePower);
         }
 
-        public void DoHeal(Fighter fighter) {
-            fighter.ApplyHeal(healPower);
-        }
+        // public void DoHeal(Fighter fighter) {
+        //     fighter.ApplyHeal(healPower);
+        // }
 
         public void ApplyDamage(int damage) {
             _hp.ApplyHpChange(damage);
-            Hp = _hp.Hp;
+            Hp = _hp.GetCurrentHp();
             Debug.Log("Fighter: " + name /*todo*/ + " has " + Hp + " left");
 
             if (_hp.Status != Status.Dead) return;

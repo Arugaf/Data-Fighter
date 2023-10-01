@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 namespace Fighters {
     public class Skill : MonoBehaviour {
+        [SerializeField] private bool heal = false;
+        
         [SerializeField] private int skillPower;
         [SerializeField] private bool aoe;
         [SerializeField] private float cooldown;
@@ -41,9 +43,14 @@ namespace Fighters {
                 return;
             }
 
-            foreach (var fighter in _fighterSelector.GetFighters())
+            foreach (var fighter in _fighterSelector.GetFighters(heal))
                 if (fighter)
-                    fighter.ApplyDamage(skillPower);
+                    // [[likely]]
+                    if (!heal) {
+                        fighter.ApplyDamage(skillPower);
+                    } else {
+                        fighter.ApplyHeal(skillPower);
+                    }
             StartCoroutine(CooldownWaiter());
         }
 
@@ -51,10 +58,15 @@ namespace Fighters {
 
         private void OnTargetSelected(GameObject go) {
             var fighter = go.GetComponent<Fighter>();
-            if (actor.GetFighterList().Contains(fighter)) return;
+            if (!heal && actor.GetFighterList().Contains(fighter)) return;
 
             _waitingForTarget = false;
-            fighter.ApplyDamage(skillPower);
+            // [[likely]]
+            if (!heal) {
+                fighter.ApplyDamage(skillPower);
+            } else {
+                fighter.ApplyHeal(skillPower);
+            }
             FighterSelector.GotFighterClicked -= OnTargetSelected;
 
             StartCoroutine(CooldownWaiter());

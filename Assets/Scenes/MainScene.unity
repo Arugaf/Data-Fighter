@@ -328,11 +328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fighterName: Test Fighter
   isEnemyFighter: 1
   autoCooldown: 1
   autoDamagePower: 0
-  healPower: 0
 --- !u!114 &336242977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1166228701}
+  hp: 100
 --- !u!212 &336242978
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1105,11 +1104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fighterName: Test Fighter
   isEnemyFighter: 1
   autoCooldown: 1
   autoDamagePower: 0
-  healPower: 0
 --- !u!114 &602474618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,6 +1120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 379139456}
+  hp: 100
 --- !u!212 &602474619
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1434,11 +1432,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fighterName: Test Fighter
   isEnemyFighter: 0
   autoCooldown: 1
   autoDamagePower: 0
-  healPower: 0
 --- !u!114 &748411852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1452,6 +1448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 2021854738}
+  hp: 100
 --- !u!212 &748411853
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1516,6 +1513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heal: 0
   skillPower: 30
   aoe: 0
   cooldown: 0
@@ -1865,11 +1863,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fighterName: Test Fighter
   isEnemyFighter: 1
   autoCooldown: 1
   autoDamagePower: 0
-  healPower: 0
 --- !u!114 &837250025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1883,6 +1879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1467309383}
+  hp: 100
 --- !u!212 &837250026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2432,11 +2429,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fighterName: Test Fighter
   isEnemyFighter: 0
   autoCooldown: 1
   autoDamagePower: 0
-  healPower: 0
 --- !u!114 &1197132953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2450,6 +2445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 561033342}
+  hp: 100
 --- !u!212 &1197132954
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2514,6 +2510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heal: 0
   skillPower: 23
   aoe: 1
   cooldown: 10
@@ -2918,11 +2915,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fighterName: Test Fighter
   isEnemyFighter: 1
   autoCooldown: 1
   autoDamagePower: 0
-  healPower: 0
 --- !u!114 &1445023821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2936,6 +2931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1662402932}
+  hp: 100
 --- !u!212 &1445023822
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3400,11 +3396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fighterName: Test Fighter
   isEnemyFighter: 0
   autoCooldown: 1
   autoDamagePower: 0
-  healPower: 0
 --- !u!114 &1894022793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3418,6 +3412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 345984369}
+  hp: 100
 --- !u!212 &1894022794
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3482,8 +3477,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillPower: 50
-  aoe: 0
+  heal: 1
+  skillPower: 20
+  aoe: 1
   cooldown: 0
   button: {fileID: 903714747}
   actor: {fileID: 935667852}
@@ -3859,11 +3855,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fighterName: Test Fighter
   isEnemyFighter: 0
   autoCooldown: 1
   autoDamagePower: 5
-  healPower: 0
 --- !u!114 &2113230782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3877,6 +3871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1139474523}
+  hp: 100
 --- !u!212 &2113230783
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3964,6 +3959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heal: 0
   skillPower: 10
   aoe: 0
   cooldown: 5
