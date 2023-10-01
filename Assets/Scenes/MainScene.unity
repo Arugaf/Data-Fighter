@@ -328,6 +328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
+  isEnemyFighter: 1
+  autoCooldown: 1
   autoDamagePower: 0
   healPower: 0
 --- !u!114 &336242977
@@ -838,6 +840,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
+  isEnemyFighter: 1
+  autoCooldown: 1
   autoDamagePower: 0
   healPower: 0
 --- !u!114 &602474618
@@ -1058,6 +1062,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
+  isEnemyFighter: 0
+  autoCooldown: 1
   autoDamagePower: 0
   healPower: 0
 --- !u!114 &748411852
@@ -1479,6 +1485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
+  isEnemyFighter: 1
+  autoCooldown: 1
   autoDamagePower: 0
   healPower: 0
 --- !u!114 &837250025
@@ -1777,6 +1785,7 @@ GameObject:
   - component: {fileID: 1140965813}
   - component: {fileID: 1140965812}
   - component: {fileID: 1140965811}
+  - component: {fileID: 1140965814}
   m_Layer: 0
   m_Name: Meta
   m_TagString: Meta
@@ -1823,6 +1832,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1140965814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140965810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b8bff6e4d3768419ac0e3d8e9b0eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 935667852}
+  enemy: {fileID: 1413448032}
 --- !u!1 &1197132949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,6 +1918,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
+  isEnemyFighter: 0
+  autoCooldown: 1
   autoDamagePower: 0
   healPower: 0
 --- !u!114 &1197132953
@@ -2271,6 +2296,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
+  isEnemyFighter: 1
+  autoCooldown: 1
   autoDamagePower: 0
   healPower: 0
 --- !u!114 &1445023821
@@ -2617,6 +2644,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
+  isEnemyFighter: 0
+  autoCooldown: 1
   autoDamagePower: 0
   healPower: 0
 --- !u!114 &1894022793
@@ -2950,7 +2979,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Test Fighter
-  autoDamagePower: 0
+  isEnemyFighter: 0
+  autoCooldown: 1
+  autoDamagePower: 5
   healPower: 0
 --- !u!114 &2113230782
 MonoBehaviour:
