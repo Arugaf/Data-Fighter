@@ -24,7 +24,7 @@ namespace Actors {
 
         private void OnFighterDeath(Fighter fighter) {
             if (!fighters.Contains(fighter)) return;
-            Debug.Log("Got Fighter Dead:" + fighter.fighterName);
+            Debug.Log("Got Fighter Dead:" + fighter.name);
             fighter.GameObject().SetActive(false);
 
             fighters[Array.IndexOf(fighters, fighter)] = null;

@@ -1,6 +1,7 @@
 using System;
 using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Fighters {
     public enum Status {
@@ -10,25 +11,29 @@ namespace Fighters {
 
     public class Health : MonoBehaviour {
         [SerializeField] private HpBar bar; // todo: find in child or fighter prefab
-
-        public int Hp { get; private set; } = 100;
+        
+        [SerializeField] private int hp = 100;
         public Status Status { get; private set; } = Status.Alive;
 
         private void Start() {
             if (!bar) return;
-            bar.MaxHp = Hp;
-            bar.Hp = Hp;
+            bar.MaxHp = hp;
+            bar.Hp = hp;
             bar.UpdateState();
         }
 
         public void ApplyHpChange(int hpChange) {
-            Hp -= hpChange;
-            Status = Hp <= 0 ? Status.Dead : Status.Alive;
+            hp -= hpChange;
+            Status = hp <= 0 ? Status.Dead : Status.Alive;
 
             if (!bar) return;
             
-            bar.Hp = Hp > 0 ? Hp : 0;
+            bar.Hp = hp > 0 ? hp : 0;
             bar.UpdateState();
+        }
+
+        public int GetCurrentHp() {
+            return hp;
         }
     }
 }
