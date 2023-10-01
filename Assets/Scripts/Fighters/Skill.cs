@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Linq;
+using Actors;
 using InputModule.GameRelated;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +13,8 @@ namespace Fighters {
         [SerializeField] private float cooldown;
 
         [SerializeField] private Button button;
+
+        [SerializeField] private Actor actor;
 
         private FighterSelector _fighterSelector;
 
@@ -46,8 +50,11 @@ namespace Fighters {
         public static event UnityAction GotUnselectAllSkills;
 
         private void OnTargetSelected(GameObject go) {
+            var fighter = go.GetComponent<Fighter>();
+            if (actor.GetFighterList().Contains(fighter)) return;
+
             _waitingForTarget = false;
-            go.GetComponent<Fighter>().ApplyDamage(skillPower);
+            fighter.ApplyDamage(skillPower);
             FighterSelector.GotFighterClicked -= OnTargetSelected;
 
             StartCoroutine(CooldownWaiter());
