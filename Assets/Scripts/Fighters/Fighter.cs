@@ -1,14 +1,20 @@
+using System.Collections;
+using AI;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace Fighters {
     [RequireComponent(typeof(Health))]
     public class Fighter : MonoBehaviour {
         public string fighterName;
+        [SerializeField] private bool isEnemyFighter;
+
+        [SerializeField] private float autoCooldown = 1.0f;
 
         [SerializeField] private int autoDamagePower;
         [SerializeField] private int healPower;
+
+        private BattleMind _ai;
 
         // private bool _allowedToHover = true;
 
@@ -16,9 +22,21 @@ namespace Fighters {
 
         private SpriteRenderer _renderer;
 
-        private void Start() {
+        public bool IsAlive { get; private set; }
+        public int Hp { get; private set; }
+
+        private void Awake() {
             _hp = GetComponent<Health>();
             _renderer = GetComponent<SpriteRenderer>();
+
+            IsAlive = _hp.Status == Status.Alive;
+            Hp = _hp.Hp;
+
+            _ai = GameObject.FindGameObjectWithTag("Meta").GetComponent<BattleMind>();
+        }
+
+        private void Start() {
+            StartCoroutine(AutoDamager());
 
             /*FighterSelector.GotFighterHovered += Hover;
             FighterSelector.GotFighterUnhovered += Unhover;
@@ -38,6 +56,7 @@ namespace Fighters {
         public static event UnityAction<Fighter> GotFighterDeath;
 
         public void DoDamage(Fighter fighter) {
+            if (!fighter) return;
             fighter.ApplyDamage(autoDamagePower);
         }
 
@@ -47,8 +66,13 @@ namespace Fighters {
 
         public void ApplyDamage(int damage) {
             _hp.ApplyHpChange(damage);
-            Debug.Log("Fighter: " + fighterName + "has " + _hp.Hp + " left");
-            if (_hp.Status == Status.Dead) GotFighterDeath?.Invoke(this);
+            Hp = _hp.Hp;
+            Debug.Log("Fighter: " + name /*todo*/ + " has " + Hp + " left");
+
+            if (_hp.Status != Status.Dead) return;
+
+            GotFighterDeath?.Invoke(this);
+            IsAlive = false;
         }
 
         public void ApplyHeal(int heal) {
@@ -82,6 +106,13 @@ namespace Fighters {
             GotFighterClicked?.Invoke(this); // todo
 
             ApplyDamage(damagePower);*/
+        }
+
+        private IEnumerator AutoDamager() {
+            while (true) {
+                DoDamage(_ai.GetTarget(isEnemyFighter));
+                yield return new WaitForSeconds(autoCooldown);
+            }
         }
     }
 }
