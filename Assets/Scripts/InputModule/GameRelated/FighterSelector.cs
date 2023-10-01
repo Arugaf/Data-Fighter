@@ -12,14 +12,11 @@ namespace InputModule.GameRelated {
         private GameObject _currentHoveredTarget;
         private Actor _enemyActor;
         private List<GameObject> _fighters;
-
         private bool _isLookingForTarget;
-
         private Camera _mainCamera;
         private Actor _playerActor;
         private GameObject _previousTarget;
         private GameObject _selectedTarget;
-
         private bool _someFighterHovered;
 
         private void Start() {
