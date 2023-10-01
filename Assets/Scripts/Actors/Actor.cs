@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Fighters;
 using Unity.VisualScripting;
@@ -6,17 +7,17 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace Actors {
-    public class Actor : MonoBehaviour { // todo: inherit
+    public class Actor : MonoBehaviour {
+        // todo: inherit
         [SerializeField] private Fighter[] fighters;
-        
-        private int _fightersCount;
+        private readonly List<Fighter> _fightersInternal = new();
+
+        private void Awake() {
+            foreach (var f in fighters) _fightersInternal.Add(f);
+        }
 
         private void Start() {
             Fighter.GotFighterDeath += OnFighterDeath;
-        }
-
-        private void Update() {
-            _fightersCount = fighters.Length;
         }
 
         public static event UnityAction GotPlayerDeath;
@@ -24,17 +25,23 @@ namespace Actors {
         private void OnFighterDeath(Fighter fighter) {
             if (!fighters.Contains(fighter)) return;
             Debug.Log("Got Fighter Dead:" + fighter.fighterName);
-            Destroy(fighter.GameObject()); // todo: delete
+            fighter.GameObject().SetActive(false);
 
             fighters[Array.IndexOf(fighters, fighter)] = null;
-            --_fightersCount;
+            _fightersInternal.Remove(fighter);
 
-            if (_fightersCount <= 0) GotPlayerDeath?.Invoke();
-            Debug.Log("Got Player Dead");
+            if (_fightersInternal.Count > 0) return;
+
+            GotPlayerDeath?.Invoke();
+            Debug.Log("Got Actor " + name + " Dead");
         }
 
         public Fighter[] GetFighters() {
             return fighters;
+        }
+
+        public IEnumerable<Fighter> GetFighterList() {
+            return _fightersInternal;
         }
     }
 }
