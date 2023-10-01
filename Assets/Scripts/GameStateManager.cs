@@ -3,6 +3,14 @@ using Actors;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// todo 
+// heal
+// menu endgame
+// statistics
+// skill cancel
+// target selecting
+// hp overflow bug fix
+
 public class GameStateManager : MonoBehaviour {
     private Scene _currentScene = Scene.MainMenu;
 

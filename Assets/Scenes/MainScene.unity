@@ -2516,7 +2516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPower: 23
   aoe: 1
-  cooldown: 0
+  cooldown: 10
   button: {fileID: 1224399610}
   actor: {fileID: 935667852}
 --- !u!1 &1224399608
@@ -3964,9 +3964,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillPower: 70
+  skillPower: 10
   aoe: 0
-  cooldown: 3
+  cooldown: 5
   button: {fileID: 1764956826}
   actor: {fileID: 935667852}
 --- !u!1001 &7986353203679851288
