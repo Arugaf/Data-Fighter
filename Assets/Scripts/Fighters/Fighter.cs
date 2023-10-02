@@ -1,11 +1,15 @@
 using System.Collections;
 using AI;
+using InputModule.GameRelated;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Fighters {
     [RequireComponent(typeof(Health))]
     public class Fighter : MonoBehaviour {
+        [SerializeField] private Color hoveredColor = Color.magenta;
+        private Color _defaultColor;
+        
         private const float StartDelay = 0.5f;
 
         [SerializeField] private bool isEnemyFighter;
@@ -40,10 +44,12 @@ namespace Fighters {
         private void Start() {
             StartCoroutine(AutoDamager());
 
-            /*FighterSelector.GotFighterHovered += Hover;
+            FighterSelector.GotFighterHovered += Hover;
             FighterSelector.GotFighterUnhovered += Unhover;
-            FighterSelector.GotFighterSelected += Selected;
+            /*FighterSelector.GotFighterSelected += Selected;
             FighterSelector.GotFighterClicked += Clicked;*/
+
+            _defaultColor = _renderer.color;
         }
 
         public void OnDestroy() {
@@ -87,13 +93,14 @@ namespace Fighters {
         }
 
         private void Hover(GameObject go) {
-            /*if (go != gameObject || !_allowedToHover) return;
-            _renderer.color = Color.cyan;*/
+            if (go != gameObject) return;
+            _renderer.color = hoveredColor;
+
         }
 
         private void Unhover(GameObject go) {
-            /*if (go != gameObject || !_allowedToHover) return;
-            _renderer.color = Color.white;*/
+            if (go != gameObject) return;
+            _renderer.color = _defaultColor;
         }
 
         private void Selected(GameObject go) {

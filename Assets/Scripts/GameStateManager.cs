@@ -9,8 +9,7 @@ using UnityEngine.SceneManagement;
 
 // todo: prefabing ?
 // todo: statistics
-// todo: target selecting ?
-// todo: shield ability
+// todo: fix all target selecting ? || not color but scale with animation
 // todo: random target selection ?
 // todo: fix skill selection disabling after other character death
 
