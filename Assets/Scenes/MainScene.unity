@@ -702,7 +702,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1519,6 +1519,8 @@ MonoBehaviour:
   cooldown: 0
   button: {fileID: 424397526}
   actor: {fileID: 935667852}
+  selectColor: {r: 0, g: 1, b: 1, a: 1}
+  idleColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!224 &777095392 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
@@ -2034,7 +2036,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2516,6 +2518,8 @@ MonoBehaviour:
   cooldown: 10
   button: {fileID: 1224399610}
   actor: {fileID: 935667852}
+  selectColor: {r: 0, g: 1, b: 1, a: 1}
+  idleColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1224399608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,7 +2583,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3258,7 +3262,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3487,6 +3491,8 @@ MonoBehaviour:
   cooldown: 0
   button: {fileID: 903714747}
   actor: {fileID: 935667852}
+  selectColor: {r: 0, g: 1, b: 1, a: 1}
+  idleColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1901529112
 GameObject:
   m_ObjectHideFlags: 0
@@ -3969,6 +3975,8 @@ MonoBehaviour:
   cooldown: 5
   button: {fileID: 1764956826}
   actor: {fileID: 935667852}
+  selectColor: {r: 0, g: 1, b: 1, a: 1}
+  idleColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &7986353203679851288
 PrefabInstance:
   m_ObjectHideFlags: 0
