@@ -361,7 +361,7 @@ Transform:
   m_GameObject: {fileID: 336242973}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.17, y: 3.24, z: 0}
+  m_LocalPosition: {x: 2.21, y: 2.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoveredColor: {r: 1, g: 0, b: 1, a: 1}
+  hoveredColor: {r: 1, g: 0.7122642, b: 0.7122642, a: 1}
   isEnemyFighter: 1
   autoCooldown: 4
   autoDamagePower: 7
@@ -462,8 +462,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.84632444, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 85c45ba03d9ecee46a49a9972d011cc3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1139,7 +1139,7 @@ Transform:
   m_GameObject: {fileID: 602474614}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.41, y: 0.21, z: 0}
+  m_LocalPosition: {x: 7.17, y: -2.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoveredColor: {r: 1, g: 0, b: 1, a: 1}
+  hoveredColor: {r: 1, g: 0.6367924, b: 0.66841537, a: 1}
   isEnemyFighter: 1
   autoCooldown: 2
   autoDamagePower: 5
@@ -1240,8 +1240,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.116336346, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 85c45ba03d9ecee46a49a9972d011cc3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1341,6 +1341,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1197132950}
     m_Modifications:
+    - target: {fileID: 903916581444291888, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1632412294020647919, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1570,7 +1574,7 @@ Transform:
   m_GameObject: {fileID: 748411848}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.9699993, y: 1.73, z: 0}
+  m_LocalPosition: {x: -4.94, y: -2.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1612,7 +1616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoveredColor: {r: 1, g: 0, b: 1, a: 1}
+  hoveredColor: {r: 0.4481132, g: 0.73769236, b: 1, a: 1}
   isEnemyFighter: 0
   autoCooldown: 5
   autoDamagePower: 4
@@ -1671,12 +1675,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.52799034, g: 0.9393787, b: 0.990566, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b0bdc2718ef2361408adf753041b5276, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 2.56, y: 2.13}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2006,7 +2010,7 @@ Transform:
   m_GameObject: {fileID: 837250021}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.69, y: -1.92, z: 0}
+  m_LocalPosition: {x: 3.17, y: -2.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2048,7 +2052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoveredColor: {r: 1, g: 0, b: 1, a: 1}
+  hoveredColor: {r: 1, g: 0.7311321, b: 0.7582005, a: 1}
   isEnemyFighter: 1
   autoCooldown: 1.5
   autoDamagePower: 4
@@ -2107,8 +2111,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: fb1f6c28c2f85a04ab678dfcff8f1dfc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2573,7 +2577,7 @@ Transform:
   m_GameObject: {fileID: 1197132949}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.49, y: -0.31, z: 0}
+  m_LocalPosition: {x: -7.02, y: 2.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2615,7 +2619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoveredColor: {r: 1, g: 0, b: 1, a: 1}
+  hoveredColor: {r: 0.67864275, g: 1, b: 0.6273585, a: 1}
   isEnemyFighter: 0
   autoCooldown: 7
   autoDamagePower: 6
@@ -2674,12 +2678,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.45843717, g: 0.9622642, b: 0.45843717, a: 1}
+  m_Sprite: {fileID: 21300000, guid: dbcb54e4d1b5f6840b91937ad56851c8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 2.56, y: 2.13}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3143,7 +3147,7 @@ Transform:
   m_GameObject: {fileID: 1445023817}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.53, y: 1.24, z: 0}
+  m_LocalPosition: {x: 5.83, y: 1.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3185,7 +3189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoveredColor: {r: 1, g: 0, b: 1, a: 1}
+  hoveredColor: {r: 1, g: 0.6462264, b: 0.6907615, a: 1}
   isEnemyFighter: 1
   autoCooldown: 3
   autoDamagePower: 6
@@ -3244,8 +3248,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0, g: 0.023826122, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 2fa4e36f0fa7bcc4a9eca7909b6de5b0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3550,7 +3554,7 @@ Transform:
   m_GameObject: {fileID: 1894022789}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.0299997, y: 2.7399998, z: 0}
+  m_LocalPosition: {x: -2.48, y: -1.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3592,7 +3596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoveredColor: {r: 1, g: 0, b: 1, a: 1}
+  hoveredColor: {r: 1, g: 0.7216981, b: 1, a: 1}
   isEnemyFighter: 0
   autoCooldown: 3
   autoDamagePower: 2
@@ -3651,8 +3655,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.9757744, g: 0.48584908, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f36b5840379de124cb354ea446443dbc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3835,6 +3839,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 748411849}
     m_Modifications:
+    - target: {fileID: 903916581444291888, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1632412294020647919, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4111,8 +4119,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113230779}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.18, y: -1.8, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.16, y: -1.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4131,7 +4139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoveredColor: {r: 1, g: 0, b: 1, a: 1}
+  hoveredColor: {r: 1, g: 0.5707547, b: 0.6272583, a: 1}
   isEnemyFighter: 0
   autoCooldown: 9
   autoDamagePower: 8
@@ -4190,12 +4198,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 0.28773582, b: 0.28773582, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 518abbe1acd8c9e49b5452544a853339, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.87, y: 2.57}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Actors;
 using Fighters;
 using InputModule;
@@ -25,6 +26,7 @@ public class GameStateManager : MonoBehaviour {
     private GameScene _currentScene = GameScene.MainMenu;
 
     private PauseMenu _pauseMenu;
+    private GameObject _about;
 
     private Actor _player;
 
@@ -43,6 +45,8 @@ public class GameStateManager : MonoBehaviour {
     private void Start() {
         _pauseMenu = FindObjectOfType<PauseMenu>();
         _pauseMenu.GameObject().SetActive(false);
+        _about = GameObject.FindWithTag("About");
+        _about.SetActive(false);
     }
 
     public void LoadGame() {
@@ -91,7 +95,9 @@ public class GameStateManager : MonoBehaviour {
     }
 
     public void ShowStatistic() {
-        // ...
+        if (!_about) return;
+        _about.SetActive(true);
+        StartCoroutine(WaitForAbout());
     }
 
     private void LoadNextLevel() {
@@ -158,5 +164,10 @@ public class GameStateManager : MonoBehaviour {
         SecondLevel,
         ThirdLevel,
         End
+    }
+
+    private IEnumerator WaitForAbout() {
+        yield return new WaitForSeconds(5f);
+        _about.SetActive(false);
     }
 }
