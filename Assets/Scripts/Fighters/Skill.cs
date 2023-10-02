@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Linq;
 using Actors;
@@ -9,11 +10,12 @@ using UnityEngine.UI;
 
 namespace Fighters {
     public class Skill : MonoBehaviour {
-        [SerializeField] private bool heal;
+        [SerializeField] private SkillType skillType = SkillType.Damage;
 
         [SerializeField] private int skillPower;
         [SerializeField] private bool aoe;
         [SerializeField] private float cooldown;
+        [SerializeField] private float shieldDuration;
 
         [SerializeField] private Button button;
 
@@ -77,13 +79,9 @@ namespace Fighters {
             }
 
             // aoe
-            foreach (var fighter in _fighterSelector.GetFighters(heal))
+            foreach (var fighter in _fighterSelector.GetFighters(skillType is SkillType.Heal or SkillType.Shield))
                 if (fighter)
-                    // [[likely]]
-                    if (!heal)
-                        fighter.ApplyDamage(skillPower);
-                    else
-                        fighter.ApplyHeal(skillPower);
+                    ApplyAttack(fighter);
             StartCoroutine(CooldownWaiter());
         }
 
@@ -93,14 +91,11 @@ namespace Fighters {
             var fighter = go.GetComponent<Fighter>();
             var fighters = actor.GetFighterList();
             var fightersArray = fighters as Fighter[] ?? fighters.ToArray();
-            if ((!heal && fightersArray.Contains(fighter)) || (heal && !fightersArray.Contains(fighter))) return;
+            if (((skillType != SkillType.Heal && skillType != SkillType.Shield) && fightersArray.Contains(fighter)) ||
+                (skillType is SkillType.Heal or SkillType.Shield && !fightersArray.Contains(fighter))) return;
 
             _waitingForTarget = false;
-            // [[likely]]
-            if (!heal)
-                fighter.ApplyDamage(skillPower);
-            else
-                fighter.ApplyHeal(skillPower);
+            ApplyAttack(fighter);
             FighterSelector.GotFighterClicked -= OnTargetSelected;
 
             _selected = false;
@@ -125,6 +120,31 @@ namespace Fighters {
             button.interactable = false;
             yield return new WaitForSeconds(cooldown);
             button.interactable = true;
+        }
+
+        private void ApplyAttack(Fighter fighter) {
+            switch (skillType) {
+                case SkillType.Heal: {
+                    fighter.ApplyHeal(skillPower);
+                    break;
+                }
+                case SkillType.Damage: {
+                    fighter.ApplyDamage(skillPower);
+                    break;
+                }
+                case SkillType.Shield: {
+                    fighter.ApplyShield(skillPower, shieldDuration);
+                    break;
+                }
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private enum SkillType {
+            Damage,
+            Heal,
+            Shield
         }
     }
 }

@@ -7,12 +7,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// todo: prefabing
+// todo: prefabing ?
 // todo: statistics
-// todo: target selecting
-// // todo: shield ability
+// todo: target selecting ?
+// todo: shield ability
 // todo: random target selection ?
-// todo: scaling
+// todo: fix skill selection disabling after other character death
 
 public class GameStateManager : MonoBehaviour {
     public enum GameStatus {

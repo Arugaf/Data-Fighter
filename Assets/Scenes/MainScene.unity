@@ -1513,10 +1513,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heal: 0
+  skillType: 0
   skillPower: 30
   aoe: 0
   cooldown: 1
+  shieldDuration: 0
   button: {fileID: 424397526}
   actor: {fileID: 935667852}
   selectColor: {r: 0, g: 1, b: 1, a: 1}
@@ -2513,10 +2514,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heal: 0
-  skillPower: 23
+  skillType: 2
+  skillPower: 50
   aoe: 1
   cooldown: 10
+  shieldDuration: 30
   button: {fileID: 1224399610}
   actor: {fileID: 935667852}
   selectColor: {r: 0, g: 1, b: 1, a: 1}
@@ -3487,10 +3489,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heal: 1
-  skillPower: 20
+  skillType: 1
+  skillPower: 30
   aoe: 0
   cooldown: 0
+  shieldDuration: 0
   button: {fileID: 903714747}
   actor: {fileID: 935667852}
   selectColor: {r: 0, g: 1, b: 1, a: 1}
@@ -3972,10 +3975,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heal: 0
+  skillType: 0
   skillPower: 10
   aoe: 0
   cooldown: 5
+  shieldDuration: 0
   button: {fileID: 1764956826}
   actor: {fileID: 935667852}
   selectColor: {r: 0, g: 1, b: 1, a: 1}

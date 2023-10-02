@@ -22,6 +22,7 @@ namespace Fighters {
         private Health _hp;
 
         private SpriteRenderer _renderer;
+        private int _shieldModifier;
 
         public bool IsAlive { get; private set; }
         public int Hp { get; private set; }
@@ -66,7 +67,7 @@ namespace Fighters {
         // }
 
         public void ApplyDamage(int damage) {
-            _hp.ApplyHpChange(damage);
+            _hp.ApplyHpChange((int) (damage * (1f - _shieldModifier / 100f)));
             Hp = _hp.GetCurrentHp();
             Debug.Log("Fighter: " + name /*todo*/ + " has " + Hp + " left");
 
@@ -78,6 +79,11 @@ namespace Fighters {
 
         public void ApplyHeal(int heal) {
             _hp.ApplyHpChange(-heal);
+        }
+
+        public void ApplyShield(int modifier, float durationInSec) {
+            _shieldModifier = modifier;
+            StartCoroutine(ShieldDurationTimer(durationInSec));
         }
 
         private void Hover(GameObject go) {
@@ -115,6 +121,11 @@ namespace Fighters {
                 DoDamage(_ai.GetTarget(isEnemyFighter));
                 yield return new WaitForSeconds(autoCooldown);
             }
+        }
+
+        private IEnumerator ShieldDurationTimer(float duration) {
+            yield return new WaitForSeconds(duration);
+            // _shieldModifier = 0;
         }
     }
 }
