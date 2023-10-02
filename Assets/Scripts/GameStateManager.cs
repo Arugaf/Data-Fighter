@@ -10,8 +10,7 @@ using UnityEngine.SceneManagement;
 // todo: prefabing
 // todo: statistics
 // todo: target selecting
-// todo: adaptive ui + anchoring
-// todo: shield ability
+// // todo: shield ability
 // todo: random target selection ?
 // todo: scaling
 
