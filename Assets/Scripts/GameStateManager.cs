@@ -127,7 +127,7 @@ public class GameStateManager : MonoBehaviour {
                 break;
             }
             case GameScene.End: {
-                sceneName = "MenuScene";
+                sceneName = "EndScene";
                 break;
             }
             case GameScene.MainMenu:
