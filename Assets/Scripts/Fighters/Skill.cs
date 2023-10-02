@@ -48,6 +48,7 @@ namespace Fighters {
             };
 
             Fighter.GotFighterDeath += fighter => {
+                GotUnselectAllSkills?.Invoke();
                 if (fighter != _fighter) return;
                 button.interactable = false;
                 _buttonImage.color = disabledColor;
