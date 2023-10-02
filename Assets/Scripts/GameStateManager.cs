@@ -8,7 +8,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // todo: endgame
-// todo: skill cancellation
 // todo: skill disabling after character death
 // todo: active skill cancellation after character death
 // todo: statistics

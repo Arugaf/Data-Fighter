@@ -5,7 +5,6 @@ using InputModule;
 using InputModule.GameRelated;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Fighters {
@@ -20,19 +19,22 @@ namespace Fighters {
 
         [SerializeField] private Actor actor;
 
+        [SerializeField] private Color selectColor = Color.cyan;
+        [SerializeField] private Color idleColor = Color.white;
+        [SerializeField] private Color disabledColor = Color.black;
+
+        private Image _buttonImage;
+        private Fighter _fighter;
+
         private FighterSelector _fighterSelector;
 
         private float _nextTimeSkillAvailable;
-
-        private bool _waitingForTarget;
         private bool _selected;
 
-        [SerializeField] private Color selectColor = Color.cyan;
-        [SerializeField] private Color idleColor = Color.white;
-
-        private Image _buttonImage = null;
+        private bool _waitingForTarget;
 
         private void Start() {
+            _fighter = GetComponent<Fighter>();
             _fighterSelector = GameObject.FindGameObjectWithTag("Meta").GetComponent<FighterSelector>();
 
             _buttonImage = button.GetComponent<Image>();
@@ -44,23 +46,27 @@ namespace Fighters {
                 _selected = false;
                 _buttonImage.color = idleColor;
             };
+
+            Fighter.GotFighterDeath += fighter => {
+                if (fighter != _fighter) return;
+                button.interactable = false;
+                _buttonImage.color = disabledColor;
+            };
         }
 
         public static event UnityAction GotSkillActivated;
 
         public void InvokeSkill() {
+            if (_selected) {
+                GotUnselectAllSkills?.Invoke();
+                return;
+            }
+
             GotUnselectAllSkills?.Invoke();
 
             if (Time.time < _nextTimeSkillAvailable) return;
             // [[likely]]
             if (!aoe) {
-                if (_selected) {
-                    _selected = false;
-                    _buttonImage.color = idleColor;
-                    GotUnselectAllSkills?.Invoke();
-                    return;
-                }
-
                 _selected = true;
                 _waitingForTarget = true;
                 GotSkillActivated?.Invoke();
@@ -102,8 +108,10 @@ namespace Fighters {
 
         private void OnUnselectAllSkills() {
             if (_waitingForTarget) FighterSelector.GotFighterClicked -= OnTargetSelected;
-            
+
             _waitingForTarget = false;
+            _buttonImage.color = idleColor;
+            _selected = false;
         }
 
         private IEnumerator CooldownWaiter() {
