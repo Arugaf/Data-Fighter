@@ -405,8 +405,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 1
-  autoCooldown: 1
-  autoDamagePower: 0
+  autoCooldown: 4
+  autoDamagePower: 7
 --- !u!114 &336242977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1166228701}
-  hp: 100
+  hp: 50
 --- !u!212 &336242978
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1183,8 +1183,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 1
-  autoCooldown: 1
-  autoDamagePower: 0
+  autoCooldown: 2
+  autoDamagePower: 5
 --- !u!114 &602474618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 379139456}
-  hp: 100
+  hp: 50
 --- !u!212 &602474619
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1570,7 +1570,7 @@ Transform:
   m_GameObject: {fileID: 748411848}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.07, y: 1.86, z: 0}
+  m_LocalPosition: {x: -6.9699993, y: 1.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1614,8 +1614,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 0
-  autoCooldown: 1
-  autoDamagePower: 0
+  autoCooldown: 5
+  autoDamagePower: 4
 --- !u!114 &748411852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1694,10 +1694,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 0
-  skillPower: 30
+  skillType: 1
+  skillPower: 12
   aoe: 0
-  cooldown: 1
+  cooldown: 5
   shieldDuration: 0
   button: {fileID: 424397526}
   actor: {fileID: 935667852}
@@ -2050,8 +2050,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 1
-  autoCooldown: 1
-  autoDamagePower: 15
+  autoCooldown: 1.5
+  autoDamagePower: 4
 --- !u!114 &837250025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2065,7 +2065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1467309383}
-  hp: 100
+  hp: 50
 --- !u!212 &837250026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2573,7 +2573,7 @@ Transform:
   m_GameObject: {fileID: 1197132949}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.59, y: -0.18, z: 0}
+  m_LocalPosition: {x: -4.49, y: -0.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2617,8 +2617,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 0
-  autoCooldown: 1
-  autoDamagePower: 0
+  autoCooldown: 7
+  autoDamagePower: 6
 --- !u!114 &1197132953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2697,8 +2697,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 2
-  skillPower: 50
+  skillType: 0
+  skillPower: 7
   aoe: 1
   cooldown: 10
   shieldDuration: 30
@@ -3187,8 +3187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 1
-  autoCooldown: 1
-  autoDamagePower: 0
+  autoCooldown: 3
+  autoDamagePower: 6
 --- !u!114 &1445023821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3202,7 +3202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1662402932}
-  hp: 100
+  hp: 50
 --- !u!212 &1445023822
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3550,7 +3550,7 @@ Transform:
   m_GameObject: {fileID: 1894022789}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.13, y: 2.87, z: 0}
+  m_LocalPosition: {x: -5.0299997, y: 2.7399998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3594,8 +3594,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 0
-  autoCooldown: 1
-  autoDamagePower: 0
+  autoCooldown: 3
+  autoDamagePower: 2
 --- !u!114 &1894022793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3674,11 +3674,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 1
+  skillType: 2
   skillPower: 30
   aoe: 0
-  cooldown: 0
-  shieldDuration: 0
+  cooldown: 10
+  shieldDuration: 5
   button: {fileID: 903714747}
   actor: {fileID: 935667852}
   selectColor: {r: 0, g: 1, b: 1, a: 1}
@@ -4112,7 +4112,7 @@ Transform:
   m_GameObject: {fileID: 2113230779}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.28, y: -1.67, z: 0}
+  m_LocalPosition: {x: -6.18, y: -1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4133,8 +4133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 0
-  autoCooldown: 1
-  autoDamagePower: 5
+  autoCooldown: 9
+  autoDamagePower: 8
 --- !u!114 &2113230782
 MonoBehaviour:
   m_ObjectHideFlags: 0

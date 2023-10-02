@@ -257,6 +257,147 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55819072}
   m_CullTransparentMesh: 1
+--- !u!1 &75625462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75625463}
+  - component: {fileID: 75625467}
+  - component: {fileID: 75625466}
+  - component: {fileID: 75625465}
+  - component: {fileID: 75625464}
+  m_Layer: 0
+  m_Name: Enemy Test Fighter 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &75625463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75625462}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.89, y: 3.24, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1865516031}
+  m_Father: {fileID: 1427754951}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &75625464
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75625462}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &75625465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75625462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa16c999a8a90524eacb17d6970cc674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredColor: {r: 1, g: 0, b: 1, a: 1}
+  isEnemyFighter: 1
+  autoCooldown: 5
+  autoDamagePower: 6
+--- !u!114 &75625466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75625462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb40424fa9a3e34f871f8037a0453ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 1865516032}
+  hp: 50
+--- !u!212 &75625467
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75625462}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Color: {r: 1, g: 0, b: 0.84632444, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &76661047
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,8 +621,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 1
-  autoCooldown: 1
-  autoDamagePower: 0
+  autoCooldown: 4
+  autoDamagePower: 7
 --- !u!114 &336242977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,7 +636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1166228701}
-  hp: 100
+  hp: 50
 --- !u!212 &336242978
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1021,8 +1162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 1
-  autoCooldown: 1
-  autoDamagePower: 0
+  autoCooldown: 2
+  autoDamagePower: 5
 --- !u!114 &602474618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1036,7 +1177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 379139456}
-  hp: 100
+  hp: 50
 --- !u!212 &602474619
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1483,7 +1624,7 @@ Transform:
   m_GameObject: {fileID: 748411848}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.07, y: 1.86, z: 0}
+  m_LocalPosition: {x: -6.9799995, y: 2.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1527,8 +1668,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 0
-  autoCooldown: 1
-  autoDamagePower: 0
+  autoCooldown: 5
+  autoDamagePower: 4
 --- !u!114 &748411852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1607,10 +1748,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 0
-  skillPower: 30
+  skillType: 1
+  skillPower: 12
   aoe: 0
-  cooldown: 0
+  cooldown: 5
   shieldDuration: 0
   button: {fileID: 2053735096}
   actor: {fileID: 935667852}
@@ -1695,8 +1836,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 1
-  autoCooldown: 1
-  autoDamagePower: 0
+  autoCooldown: 1.5
+  autoDamagePower: 4
 --- !u!114 &837250025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1710,7 +1851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1467309383}
-  hp: 100
+  hp: 50
 --- !u!212 &837250026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2179,7 +2320,7 @@ Transform:
   m_GameObject: {fileID: 1197132949}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.59, y: -0.18, z: 0}
+  m_LocalPosition: {x: -4.5, y: 0.060000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2223,8 +2364,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 0
-  autoCooldown: 1
-  autoDamagePower: 0
+  autoCooldown: 7
+  autoDamagePower: 6
 --- !u!114 &1197132953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2304,9 +2445,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillType: 0
-  skillPower: 23
+  skillPower: 7
   aoe: 1
-  cooldown: 0
+  cooldown: 10
   shieldDuration: 0
   button: {fileID: 843193070}
   actor: {fileID: 935667852}
@@ -2400,6 +2541,7 @@ Transform:
   - {fileID: 602474615}
   - {fileID: 1445023818}
   - {fileID: 336242974}
+  - {fileID: 75625463}
   - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2581,8 +2723,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 1
-  autoCooldown: 1
-  autoDamagePower: 0
+  autoCooldown: 3
+  autoDamagePower: 6
 --- !u!114 &1445023821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2596,7 +2738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1662402932}
-  hp: 100
+  hp: 50
 --- !u!212 &1445023822
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3315,6 +3457,127 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828148144}
   m_CullTransparentMesh: 1
+--- !u!1001 &1865516030
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 75625463}
+    m_Modifications:
+    - target: {fileID: 1632412294020647919, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632412294020647919, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816960074390535718, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_Name
+      value: Hp Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 375.4312
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 85.8108
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.020000458
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+--- !u!224 &1865516031 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9038789075251277123, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+  m_PrefabInstance: {fileID: 1865516030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1865516032 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 94455801914311372, guid: b5f6e366aedad214bbad2dda18d0aa83, type: 3}
+  m_PrefabInstance: {fileID: 1865516030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a369c3f37427e84dbd49e51a276f1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1894022789
 GameObject:
   m_ObjectHideFlags: 0
@@ -3345,7 +3608,7 @@ Transform:
   m_GameObject: {fileID: 1894022789}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.13, y: 2.87, z: 0}
+  m_LocalPosition: {x: -5.04, y: 3.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3389,8 +3652,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 0
-  autoCooldown: 1
-  autoDamagePower: 0
+  autoCooldown: 3
+  autoDamagePower: 2
 --- !u!114 &1894022793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3469,11 +3732,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a2bc32b1a49e84399f1a0d4acb2bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 0
-  skillPower: 50
+  skillType: 2
+  skillPower: 30
   aoe: 0
-  cooldown: 0
-  shieldDuration: 0
+  cooldown: 10
+  shieldDuration: 5
   button: {fileID: 1828148146}
   actor: {fileID: 935667852}
   selectColor: {r: 0, g: 1, b: 1, a: 1}
@@ -4108,7 +4371,7 @@ Transform:
   m_GameObject: {fileID: 2113230779}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.28, y: -1.67, z: 0}
+  m_LocalPosition: {x: -6.19, y: -1.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4129,8 +4392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredColor: {r: 1, g: 0, b: 1, a: 1}
   isEnemyFighter: 0
-  autoCooldown: 1
-  autoDamagePower: 5
+  autoCooldown: 9
+  autoDamagePower: 8
 --- !u!114 &2113230782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4233,9 +4496,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillType: 0
-  skillPower: 70
+  skillPower: 10
   aoe: 0
-  cooldown: 3
+  cooldown: 5
   shieldDuration: 0
   button: {fileID: 1793231672}
   actor: {fileID: 935667852}
