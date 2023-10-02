@@ -53,9 +53,9 @@ namespace Fighters {
         }
 
         public void OnDestroy() {
-            /*FighterSelector.GotFighterHovered -= Hover;
+            FighterSelector.GotFighterHovered -= Hover;
             FighterSelector.GotFighterUnhovered -= Unhover;
-            FighterSelector.GotFighterSelected -= Selected;
+            /*FighterSelector.GotFighterSelected -= Selected;
             FighterSelector.GotFighterClicked -= Clicked;*/
         }
 
