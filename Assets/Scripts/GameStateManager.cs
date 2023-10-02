@@ -7,8 +7,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// todo: prefabing
 // todo: endgame
-// todo: active skill cancellation after character death
 // todo: statistics
 // todo: target selecting
 // todo: adaptive ui + anchoring
@@ -99,17 +99,14 @@ public class GameStateManager : MonoBehaviour {
         switch (scene) {
             case Scene.FirstLevel: {
                 sceneName = "MainScene";
-                _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Actor>();
                 break;
             }
             case Scene.SecondLevel: {
                 sceneName = "SecondLevel";
-                _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Actor>();
                 break;
             }
             case Scene.ThirdLevel: {
                 sceneName = "ThirdLevel";
-                _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Actor>();
                 break;
             }
             case Scene.End: {
@@ -128,6 +125,7 @@ public class GameStateManager : MonoBehaviour {
     }
 
     private void OnActorDead(Actor actor) {
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Actor>();
         if (actor == _player)
             // game over
             return;
