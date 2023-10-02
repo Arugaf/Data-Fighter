@@ -1,16 +1,22 @@
 using System;
 using Actors;
+using Fighters;
 using InputModule;
 using UI;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// todo: menu endgame
+// todo: endgame
+// todo: skill cancellation
+// todo: skill disabling after character death
+// todo: active skill cancellation after character death
 // todo: statistics
 // todo: skill cancel
 // todo: target selecting
 // todo: adaptive ui + anchoring
+// todo: shield ability
+// todo: random target selection ?
 
 public class GameStateManager : MonoBehaviour {
     private GameStatus _currentGameStatus = GameStatus.Active;
@@ -20,27 +26,35 @@ public class GameStateManager : MonoBehaviour {
 
     private Actor _player;
 
+    private bool _skillSelected = false;
+
     private void Awake() {
         DontDestroyOnLoad(this);
 
-        _pauseMenu = FindObjectOfType<PauseMenu>();
-        _pauseMenu.GameObject().SetActive(false);
+        Actor.GotActorDead += OnActorDead;
+        InputHandler.GotEscapeKeyDown += GotPauseGame;
+
+        Skill.GotSkillActivated += () => _skillSelected = true;
+        Skill.GotUnselectAllSkills += () => _skillSelected = false;
     }
 
     private void Start() {
-        Actor.GotActorDead += OnActorDead;
-        InputHandler.GotEscapeKeyDown += GotPauseGame;
+        _pauseMenu = FindObjectOfType<PauseMenu>();
+        _pauseMenu.GameObject().SetActive(false);
     }
 
     public void LoadGame() {
         _currentScene = Scene.FirstLevel;
         SceneManager.LoadScene("MainScene");
+        _currentGameStatus = GameStatus.Active;
+        Time.timeScale = 1.0f;
     }
 
     public void LoadMenu() {
         _currentScene = Scene.MainMenu;
         SceneManager.LoadScene("IntroScene");
         _pauseMenu.GameObject().SetActive(false);
+        _currentGameStatus = GameStatus.Paused;
     }
 
     public void Exit() {
@@ -48,7 +62,7 @@ public class GameStateManager : MonoBehaviour {
     }
 
     public void Unpause() {
-        Time.timeScale = 1;
+        Time.timeScale = 1.0f;
         _currentGameStatus = GameStatus.Active;
         _pauseMenu.GameObject().SetActive(false);
     }
@@ -56,9 +70,11 @@ public class GameStateManager : MonoBehaviour {
     private void GotPauseGame() {
         if (_currentScene is Scene.MainMenu or Scene.End) return;
 
+        if (_skillSelected) return;
+
         Time.timeScale = _currentGameStatus switch {
-            GameStatus.Active => 0,
-            GameStatus.Paused => 1,
+            GameStatus.Active => 0.0f,
+            GameStatus.Paused => 1.0f,
             _ => Time.timeScale
         };
 
