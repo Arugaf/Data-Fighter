@@ -90,7 +90,9 @@ namespace Fighters {
 
         private void OnTargetSelected(GameObject go) {
             var fighter = go.GetComponent<Fighter>();
-            if (!heal && actor.GetFighterList().Contains(fighter)) return;
+            var fighters = actor.GetFighterList();
+            var fightersArray = fighters as Fighter[] ?? fighters.ToArray();
+            if ((!heal && fightersArray.Contains(fighter)) || (heal && !fightersArray.Contains(fighter))) return;
 
             _waitingForTarget = false;
             // [[likely]]
@@ -110,7 +112,7 @@ namespace Fighters {
             if (_waitingForTarget) FighterSelector.GotFighterClicked -= OnTargetSelected;
 
             _waitingForTarget = false;
-            _buttonImage.color = idleColor;
+            _buttonImage.color = _buttonImage.color == disabledColor ? disabledColor : idleColor;
             _selected = false;
         }
 

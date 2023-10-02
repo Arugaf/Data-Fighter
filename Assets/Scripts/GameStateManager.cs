@@ -8,10 +8,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // todo: endgame
-// todo: skill disabling after character death
 // todo: active skill cancellation after character death
 // todo: statistics
-// todo: skill cancel
 // todo: target selecting
 // todo: adaptive ui + anchoring
 // todo: shield ability

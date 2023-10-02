@@ -1516,7 +1516,7 @@ MonoBehaviour:
   heal: 0
   skillPower: 30
   aoe: 0
-  cooldown: 0
+  cooldown: 1
   button: {fileID: 424397526}
   actor: {fileID: 935667852}
   selectColor: {r: 0, g: 1, b: 1, a: 1}
