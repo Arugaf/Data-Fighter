@@ -7,23 +7,28 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// todo: prefabing
-// todo: endgame
+// todo: prefabing ?
 // todo: statistics
-// todo: target selecting
-// todo: adaptive ui + anchoring
-// todo: shield ability
+// todo: fix all target selecting ? || not color but scale with animation
 // todo: random target selection ?
+// todo: fix skill selection disabling after other character death
 
 public class GameStateManager : MonoBehaviour {
-    private GameStatus _currentGameStatus = GameStatus.Active;
-    private Scene _currentScene = Scene.MainMenu;
+    public enum GameStatus {
+        Active,
+        Paused,
+        Win,
+        Lose
+    }
+
+    public GameStatus currentGameStatus = GameStatus.Active;
+    private GameScene _currentScene = GameScene.MainMenu;
 
     private PauseMenu _pauseMenu;
 
     private Actor _player;
 
-    private bool _skillSelected = false;
+    private bool _skillSelected;
 
     private void Awake() {
         DontDestroyOnLoad(this);
@@ -41,17 +46,23 @@ public class GameStateManager : MonoBehaviour {
     }
 
     public void LoadGame() {
-        _currentScene = Scene.FirstLevel;
+        _currentScene = GameScene.FirstLevel;
         SceneManager.LoadScene("MainScene");
-        _currentGameStatus = GameStatus.Active;
+        currentGameStatus = GameStatus.Active;
         Time.timeScale = 1.0f;
     }
 
     public void LoadMenu() {
-        _currentScene = Scene.MainMenu;
+        _currentScene = GameScene.MainMenu;
         SceneManager.LoadScene("IntroScene");
         _pauseMenu.GameObject().SetActive(false);
-        _currentGameStatus = GameStatus.Paused;
+        currentGameStatus = GameStatus.Paused;
+    }
+
+    public void LoadGameOverScene() {
+        _currentScene = GameScene.End;
+        SceneManager.LoadScene("EndScene");
+        _pauseMenu.GameObject().SetActive(false);
     }
 
     public void Exit() {
@@ -60,23 +71,23 @@ public class GameStateManager : MonoBehaviour {
 
     public void Unpause() {
         Time.timeScale = 1.0f;
-        _currentGameStatus = GameStatus.Active;
+        currentGameStatus = GameStatus.Active;
         _pauseMenu.GameObject().SetActive(false);
     }
 
     private void GotPauseGame() {
-        if (_currentScene is Scene.MainMenu or Scene.End) return;
+        if (_currentScene is GameScene.MainMenu or GameScene.End) return;
 
         if (_skillSelected) return;
 
-        Time.timeScale = _currentGameStatus switch {
+        Time.timeScale = currentGameStatus switch {
             GameStatus.Active => 0.0f,
             GameStatus.Paused => 1.0f,
             _ => Time.timeScale
         };
 
-        _currentGameStatus = _currentGameStatus == GameStatus.Active ? GameStatus.Paused : GameStatus.Active;
-        _pauseMenu.GameObject().SetActive(_currentGameStatus == GameStatus.Paused);
+        currentGameStatus = currentGameStatus == GameStatus.Active ? GameStatus.Paused : GameStatus.Active;
+        _pauseMenu.GameObject().SetActive(currentGameStatus == GameStatus.Paused);
     }
 
     public void ShowStatistic() {
@@ -84,36 +95,42 @@ public class GameStateManager : MonoBehaviour {
     }
 
     private void LoadNextLevel() {
-        var scene = (int)_currentScene == Enum.GetNames(typeof(Scene)).Length - 1
+        if (_currentScene == GameScene.End) {
+            currentGameStatus = GameStatus.Win;
+            LoadGameOverScene();
+            return;
+        }
+
+        var scene = (int)_currentScene == Enum.GetNames(typeof(GameScene)).Length - 1
             ? _currentScene = 0
             : ++_currentScene;
 
         LoadScene(scene);
     }
 
-    private void LoadScene(Scene scene) {
+    private void LoadScene(GameScene scene) {
         _currentScene = scene;
 
         string sceneName;
 
         switch (scene) {
-            case Scene.FirstLevel: {
+            case GameScene.FirstLevel: {
                 sceneName = "MainScene";
                 break;
             }
-            case Scene.SecondLevel: {
+            case GameScene.SecondLevel: {
                 sceneName = "SecondLevel";
                 break;
             }
-            case Scene.ThirdLevel: {
+            case GameScene.ThirdLevel: {
                 sceneName = "ThirdLevel";
                 break;
             }
-            case Scene.End: {
+            case GameScene.End: {
                 sceneName = "MenuScene";
                 break;
             }
-            case Scene.MainMenu:
+            case GameScene.MainMenu:
             default: {
                 sceneName = "IntroScene";
                 break;
@@ -126,22 +143,20 @@ public class GameStateManager : MonoBehaviour {
 
     private void OnActorDead(Actor actor) {
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Actor>();
-        if (actor == _player)
-            // game over
+        if (actor == _player) {
+            LoadGameOverScene();
+            currentGameStatus = GameStatus.Lose;
             return;
+        }
+
         LoadNextLevel();
     }
 
-    private enum Scene {
+    private enum GameScene {
         MainMenu = 0,
         FirstLevel,
         SecondLevel,
         ThirdLevel,
         End
-    }
-
-    private enum GameStatus {
-        Active,
-        Paused
     }
 }
