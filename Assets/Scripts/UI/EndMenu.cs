@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace UI {
@@ -12,8 +11,8 @@ namespace UI {
             _gameOverTitle = GameObject.FindGameObjectWithTag("GameOverTitle").GetComponent<TextMeshProUGUI>();
 
             if (!_gameStateManager || !_gameOverTitle) return;
-            
-            _gameOverTitle.text.Replace("${placeholder}",
+
+            _gameOverTitle.text = _gameOverTitle.text.Replace("${placeholder}",
                 _gameStateManager.currentGameStatus == GameStateManager.GameStatus.Lose
                     ? "Вы проиграли!"
                     : "Вы Победили!");

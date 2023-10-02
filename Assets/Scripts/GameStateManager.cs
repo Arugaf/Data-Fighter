@@ -6,7 +6,6 @@ using UI;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 // todo: prefabing
 // todo: statistics
